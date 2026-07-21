@@ -74,10 +74,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col px-6 py-10 sm:px-10 lg:px-28 lg:py-14">
+    <main className="flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
       {/* About */}
       <header
-        className={`flex max-w-[358px] flex-col items-start gap-7 transition-opacity duration-700 ease-out ${
+        className={`flex max-w-[358px] shrink-0 flex-col items-start gap-6 transition-opacity duration-700 ease-out ${
           done ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -95,8 +95,8 @@ export default function Home() {
       </header>
 
       {/* Portrait flipbook */}
-      <div className="flex flex-1 items-center justify-center py-16">
-        <figure className="relative aspect-[486/324] w-full max-w-[486px]">
+      <div className="flex min-h-0 flex-1 items-center justify-center py-6">
+        <figure className="relative aspect-[486/324] h-full max-h-[324px] max-w-full">
           {FRAMES.map((src, i) => (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
@@ -127,7 +127,7 @@ export default function Home() {
 
       {/* Wordmark */}
       <h1
-        className={`whitespace-nowrap text-[17vw] font-bold leading-none tracking-[-0.07em] transition-opacity duration-700 ease-out ${
+        className={`shrink-0 whitespace-nowrap text-[17vw] font-bold leading-none tracking-[-0.07em] transition-opacity duration-700 ease-out ${
           done ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -136,7 +136,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer
-        className={`mt-10 flex items-center justify-between text-xs font-medium transition-opacity duration-700 ease-out ${
+        className={`mt-6 flex shrink-0 items-center justify-between text-xs font-medium transition-opacity duration-700 ease-out ${
           done ? "opacity-100" : "opacity-0"
         }`}
       >
