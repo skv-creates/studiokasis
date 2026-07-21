@@ -17,7 +17,7 @@ const FRAMES = [
   "/team.jpg",
 ];
 
-const DURATION = 400; // ms for the whole sequence
+const DURATION = 2000; // ms for the whole sequence
 
 export default function Home() {
   const [frame, setFrame] = useState(0);
