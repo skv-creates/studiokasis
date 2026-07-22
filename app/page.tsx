@@ -22,6 +22,9 @@ const DURATION = 2000; // ms for the whole sequence
 export default function Home() {
   const [frame, setFrame] = useState(0);
   const [done, setDone] = useState(false);
+  const [reduced, setReduced] = useState(false);
+  // Frame chosen by the cursor while hovering; null when not scrubbing.
+  const [scrubFrame, setScrubFrame] = useState<number | null>(null);
 
   useEffect(() => {
     const reduce = window.matchMedia(
@@ -29,6 +32,7 @@ export default function Home() {
     ).matches;
 
     if (reduce) {
+      setReduced(true);
       setFrame(FRAMES.length - 1);
       setDone(true);
       return;
@@ -73,6 +77,9 @@ export default function Home() {
     };
   }, []);
 
+  // While hovering, the cursor drives the frame; otherwise show the intro frame.
+  const displayFrame = scrubFrame ?? frame;
+
   return (
     <main className="flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
       {/* About */}
@@ -96,7 +103,18 @@ export default function Home() {
 
       {/* Portrait flipbook */}
       <div className="flex min-h-0 flex-1 items-center justify-center py-6">
-        <figure className="relative aspect-[486/324] h-full max-h-[324px] max-w-full">
+        <figure
+          className="relative aspect-[486/324] h-full max-h-[324px] max-w-full cursor-ew-resize"
+          onMouseMove={(e) => {
+            // Only scrub once the intro has settled and motion is allowed.
+            if (!done || reduced) return;
+            const rect = e.currentTarget.getBoundingClientRect();
+            const p = (e.clientX - rect.left) / rect.width;
+            const clamped = Math.min(0.999, Math.max(0, p));
+            setScrubFrame(Math.floor(clamped * FRAMES.length));
+          }}
+          onMouseLeave={() => setScrubFrame(null)}
+        >
           {FRAMES.map((src, i) => (
             /* eslint-disable-next-line @next/next/no-img-element */
             <img
@@ -109,16 +127,22 @@ export default function Home() {
               }
               aria-hidden={i !== FRAMES.length - 1}
               className="absolute inset-0 h-full w-full object-cover"
-              style={{ opacity: i === frame ? 1 : 0 }}
+              style={{ opacity: i === displayFrame ? 1 : 0 }}
             />
           ))}
-          <span className="pointer-events-none absolute left-3 top-[55%] font-hand text-xs uppercase tracking-tight text-background transition-opacity duration-700 ease-out"
-            style={{ opacity: done ? 1 : 0 }}
+          <span className="pointer-events-none absolute left-3 top-[55%] font-hand text-xs uppercase tracking-tight text-background transition-opacity ease-out"
+            style={{
+              opacity: scrubFrame !== null ? 0 : done ? 1 : 0,
+              transitionDuration: scrubFrame !== null ? "120ms" : done ? "120ms" : "700ms",
+            }}
           >
             Kalina
           </span>
-          <span className="pointer-events-none absolute right-3 top-[55%] font-hand text-xs uppercase tracking-tight text-background transition-opacity duration-700 ease-out"
-            style={{ opacity: done ? 1 : 0 }}
+          <span className="pointer-events-none absolute right-3 top-[55%] font-hand text-xs uppercase tracking-tight text-background transition-opacity ease-out"
+            style={{
+              opacity: scrubFrame !== null ? 0 : done ? 1 : 0,
+              transitionDuration: scrubFrame !== null ? "120ms" : done ? "120ms" : "700ms",
+            }}
           >
             Stefan
           </span>
