@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "studiokasis-website",
+  "compatibility_date": "2026-08-21",
+  "assets": {
+    // Output of `next build` with `output: "export"`.
+    "directory": "./out",
+    // Serve Next's generated 404.html for unknown paths.
+    "not_found_handling": "404-page"
+  }
+}
