@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Caveat } from "next/font/google";
+import { Inter, Inter_Tight, Caveat, Fragment_Mono } from "next/font/google";
 import "./globals.css";
 import GridOverlay from "./grid-overlay";
 
@@ -8,10 +8,22 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 const caveat = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
   weight: ["700"],
+});
+
+const fragmentMono = Fragment_Mono({
+  variable: "--font-fragment-mono",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -28,7 +40,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${caveat.variable} h-full antialiased`}
+      className={`${inter.variable} ${interTight.variable} ${caveat.variable} ${fragmentMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
         {children}

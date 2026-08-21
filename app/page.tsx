@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // Flipbook frames, in play order. The montage flashes through f1–f9 and
@@ -81,7 +82,17 @@ export default function Home() {
   const displayFrame = scrubFrame ?? frame;
 
   return (
-    <main className="flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
+    <main className="relative flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
+      {/* Logo */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="/about/logo-nav.svg"
+        alt="Studio Kasis"
+        className={`pointer-events-none absolute right-6 top-8 h-6 w-auto transition-opacity duration-700 ease-out sm:right-10 lg:right-28 lg:top-10 ${
+          done ? "opacity-100" : "opacity-0"
+        }`}
+      />
+
       {/* About */}
       <header
         className={`flex max-w-[358px] shrink-0 flex-col items-start gap-6 transition-opacity duration-700 ease-out ${
@@ -166,6 +177,9 @@ export default function Home() {
       >
         <p>© Studio Kasis 2026</p>
         <div className="flex items-center gap-10">
+          <Link href="/about" className="transition-opacity hover:opacity-70">
+            About
+          </Link>
           <span>Amsterdam</span>
           <span>Sofia</span>
         </div>
