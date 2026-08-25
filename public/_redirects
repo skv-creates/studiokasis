@@ -1,0 +1,9 @@
+# Cloudflare asset redirects. Next's `redirects()` config is unsupported under
+# `output: "export"`, so short links live here. Files in `public/` are copied to
+# `out/`, which wrangler.jsonc serves as the asset directory.
+#
+# Short links printed in the sales deck. 302 is deliberate: a 301 is cached by
+# browsers indefinitely, so anyone who clicked once would stay pinned to the old
+# destination after we repoint it here.
+/call   https://cal.com/stefan.v/studio.kasis   302
+/call/  https://cal.com/stefan.v/studio.kasis   302
