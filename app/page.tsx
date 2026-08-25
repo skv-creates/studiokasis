@@ -104,11 +104,16 @@ export default function Home() {
           believe in good design to create brands, products and campaigns that
           set their business apart.
         </p>
+        {/* Plain <a>, not next/link: /call is not a Next route but a redirect
+            served by Cloudflare from public/_redirects, so the browser has to
+            make a real request for it. A <Link> would try to client-side
+            navigate and 404. Pointing at our own /call rather than cal.com
+            directly keeps the booking URL changeable in one place. */}
         <a
-          href="mailto:hello@studiokasis.com"
+          href="/call"
           className="rounded-full bg-foreground px-4 py-2 text-xs font-medium text-background transition-opacity hover:opacity-80"
         >
-          Say hello
+          Book call
         </a>
       </header>
 
