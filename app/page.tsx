@@ -82,7 +82,7 @@ export default function Home() {
   const displayFrame = scrubFrame ?? frame;
 
   return (
-    <main className="relative flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
+    <main className="@container relative flex h-[100svh] flex-col overflow-hidden px-6 py-8 sm:px-10 lg:px-28 lg:py-10">
       {/* Logo */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -113,9 +113,9 @@ export default function Home() {
       </header>
 
       {/* Portrait flipbook */}
-      <div className="flex min-h-0 flex-1 items-center justify-center py-6">
+      <div className="grid min-h-0 flex-1 grid-cols-12 items-center gap-4 py-6">
         <figure
-          className="relative aspect-[486/324] h-full max-h-[324px] max-w-full cursor-ew-resize"
+          className="relative col-span-12 aspect-[486/324] h-full max-h-[324px] max-w-full cursor-ew-resize justify-self-center lg:col-span-4 lg:col-start-5 lg:h-auto lg:max-h-full lg:w-full lg:justify-self-stretch"
           onMouseMove={(e) => {
             // Only scrub once the intro has settled and motion is allowed.
             if (!done || reduced) return;
@@ -160,9 +160,15 @@ export default function Home() {
         </figure>
       </div>
 
-      {/* Wordmark */}
+      {/* Wordmark, sized to sit flush inside the 12 columns the grid overlay
+          draws. cqw measures against main's content box rather than the
+          viewport, which is what kept the old vw value overflowing the gutters.
+          Inter Bold at tracking -0.07em inks "Studio Kasis" 5.23866x its font
+          size, so 100/5.23866 = 19.0888cqw fills the columns exactly; the
+          negative margin cancels the S's 0.04135em left side bearing so the
+          glyphs, not the text box, line up with the gutters. */}
       <h1
-        className={`shrink-0 whitespace-nowrap text-[17vw] font-bold leading-none tracking-[-0.07em] transition-opacity duration-700 ease-out ${
+        className={`ml-[-0.04135em] shrink-0 whitespace-nowrap text-[19.0888cqw] font-bold leading-none tracking-[-0.07em] transition-opacity duration-700 ease-out ${
           done ? "opacity-100" : "opacity-0"
         }`}
       >
