@@ -162,14 +162,24 @@ export default function About() {
         </div>
 
         <div className="border-t border-about-fg/10">
-          {CLIENTS.map((client) => (
-            <p
-              key={client}
-              className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
-            >
-              {client}
-            </p>
-          ))}
+          {CLIENTS.map((client) =>
+            client === "Bulgarian Design Council" ? (
+              <Link
+                key={client}
+                href="/work/bulgarian-design-council"
+                className="block border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
+              >
+                {client}
+              </Link>
+            ) : (
+              <p
+                key={client}
+                className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
+              >
+                {client}
+              </p>
+            )
+          )}
         </div>
       </section>
 
