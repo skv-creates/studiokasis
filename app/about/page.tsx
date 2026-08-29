@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 // href is set once a case study page exists; the rest stay as plain names.
 const CLIENTS: { name: string; href?: string }[] = [
   { name: "Payhawk", href: "/work/payhawk" },
-  { name: "Bulgarian Design Council" },
+  { name: "Bulgarian Design Council", href: "/work/bulgarian-design-council" },
   { name: "Bulgaria by Design" },
 ];
 
@@ -167,20 +167,24 @@ export default function About() {
         </div>
 
         <div className="border-t border-about-fg/10">
-          {CLIENTS.map((client) => (
-            <p
-              key={client.name}
-              className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
-            >
-              {client.href ? (
-                <Link href={client.href} className="transition-opacity hover:opacity-70">
-                  {client.name}
-                </Link>
-              ) : (
-                client.name
-              )}
-            </p>
-          ))}
+          {CLIENTS.map((client) =>
+            client.href ? (
+              <Link
+                key={client.name}
+                href={client.href}
+                className="block border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
+              >
+                {client.name}
+              </Link>
+            ) : (
+              <p
+                key={client.name}
+                className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
+              >
+                {client.name}
+              </p>
+            )
+          )}
         </div>
       </section>
 
