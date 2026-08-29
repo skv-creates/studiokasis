@@ -9,7 +9,12 @@ export const metadata: Metadata = {
     "We're two designers who think alike enough to work as one, and differently enough that neither of us builds a brand alone in our heads.",
 };
 
-const CLIENTS = ["Payhawk", "Bulgarian Design Council", "Bulgaria by Design"];
+// href is set once a case study page exists; the rest stay as plain names.
+const CLIENTS: { name: string; href?: string }[] = [
+  { name: "Payhawk", href: "/work/payhawk" },
+  { name: "Bulgarian Design Council" },
+  { name: "Bulgaria by Design" },
+];
 
 /**
  * Every hand-drawn note/arrow below is positioned as a free-floating overlay,
@@ -164,10 +169,16 @@ export default function About() {
         <div className="border-t border-about-fg/10">
           {CLIENTS.map((client) => (
             <p
-              key={client}
+              key={client.name}
               className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
             >
-              {client}
+              {client.href ? (
+                <Link href={client.href} className="transition-opacity hover:opacity-70">
+                  {client.name}
+                </Link>
+              ) : (
+                client.name
+              )}
             </p>
           ))}
         </div>
