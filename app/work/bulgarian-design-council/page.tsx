@@ -381,29 +381,31 @@ export default function BulgarianDesignCouncil() {
       />
 
       {/* Footer CTA */}
-      <section className="bg-about-pink px-6 py-10 sm:px-10 lg:px-28 lg:py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-6">
-          <div className="lg:col-start-4 lg:col-span-6">
-            <h2 className="font-tight text-[28px] leading-[1.2] lg:text-[36px]">
+      <footer className="mt-8 bg-about-pink px-6 py-16 sm:px-10 lg:mt-12 lg:px-28 lg:py-24">
+        <div className="mx-auto grid max-w-[1288px] grid-cols-1 lg:grid-cols-12">
+          <div className="lg:col-span-7 lg:col-start-4">
+            <h2 className="font-tight text-[32px] leading-[1.1] tracking-[-1px] lg:text-[48px]">
               {"If your identity hasn't kept up with your ambition."}
             </h2>
-            <p className="mt-6 text-[16px] leading-[1.4] lg:mt-8">
+            <p className="mt-8 max-w-[640px] text-[18px] leading-[1.6] lg:text-[20px]">
               {
                 "We can help you fix that, and we take it off your plate: positioning, identity, site and photography, built to say where you're headed, not just where you've been."
               }
             </p>
-            <p className="mt-6 text-[16px] leading-[1.4] lg:mt-8">
-              Projects start at €20,000
+            <p className="mt-6 text-[18px] leading-[1.6] lg:text-[20px]">
+              Projects start at €20,000.
             </p>
-            <Link
+            {/* Plain <a>: /call is a Cloudflare redirect from public/_redirects,
+                not a Next route, so it needs a real request. */}
+            <a
               href="/call"
-              className="mt-6 inline-flex h-[31px] items-center justify-center rounded-full border border-black px-4 py-1 text-[15px] text-black transition-opacity hover:opacity-70 lg:mt-8 lg:text-[17px]"
+              className="mt-10 inline-flex items-center justify-center rounded-full border border-black px-8 py-3 text-[20px] text-black transition-opacity hover:opacity-70 lg:text-[26px]"
             >
               Book a call
-            </Link>
+            </a>
           </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }
