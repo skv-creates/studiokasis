@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const CLIENTS: { name: string; href?: string }[] = [
   { name: "Payhawk", href: "/work/payhawk" },
   { name: "Bulgarian Design Council", href: "/work/bulgarian-design-council" },
-  { name: "Bulgaria by Design" },
+  { name: "Bulgaria by Design", href: "/work/bulgaria-by-design" },
 ];
 
 /**
