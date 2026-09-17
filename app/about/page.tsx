@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ServicesFan from "./ServicesFan";
 import HoverScrubPhoto from "./HoverScrubPhoto";
+import FloatingNav from "../FloatingNav";
 
 export const metadata: Metadata = {
   title: "About — Studio Kasis",
@@ -32,6 +33,8 @@ export default function About() {
           <img src="/about/logo-nav.svg" alt="Studio Kasis" className="h-6 w-auto" />
         </Link>
       </header>
+
+      <FloatingNav />
 
       {/* Hero */}
       <section className="px-6 py-16 sm:px-10 lg:px-28 lg:py-24">

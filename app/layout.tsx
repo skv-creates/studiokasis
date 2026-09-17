@@ -11,7 +11,10 @@ const inter = Inter({
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
-  weight: ["400"],
+  // 200/500/700 added alongside the existing 400 for the new homepage
+  // design: "We are Kasis." (ExtraLight), section headings (Medium), and
+  // service-card bullet labels (Bold).
+  weight: ["200", "400", "500", "700"],
 });
 
 const caveat = Caveat({

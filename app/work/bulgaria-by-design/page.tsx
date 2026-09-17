@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FloatingNav from "../../FloatingNav";
 
 export const metadata: Metadata = {
   title: "Bulgaria by Design — Studio Kasis",
@@ -90,6 +91,8 @@ export default function BulgariaByDesign() {
           <img src="/about/logo-nav.svg" alt="Studio Kasis" className="h-6 w-auto" />
         </Link>
       </header>
+
+      <FloatingNav />
 
       {/* Hero */}
       <section className="px-6 py-10 sm:px-10 lg:px-28 lg:py-16">

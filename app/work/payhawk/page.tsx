@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import FloatingNav from "../../FloatingNav";
 
 export const metadata: Metadata = {
   title: "Payhawk — Studio Kasis",
@@ -71,6 +72,8 @@ export default function Payhawk() {
           <img src="/about/logo-nav.svg" alt="Studio Kasis" className="h-6 w-auto" />
         </Link>
       </header>
+
+      <FloatingNav />
 
       {/* Hero */}
       <section className="px-6 pb-8 pt-16 sm:px-10 lg:px-28 lg:pb-12 lg:pt-24">
