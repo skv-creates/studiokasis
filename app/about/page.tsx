@@ -72,10 +72,9 @@ export default function About() {
 
         {/* Doodle overlay */}
         <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
-          <p
-            style={{ left: "7.41%", top: "17.14%", width: "10%" }}
-            className="absolute -translate-y-1/2 -rotate-[13.65deg] font-hand text-[20px] uppercase tracking-tight text-about-accent"
-          >
+          {/* Below lg there's no empty margin beside the photos, so the
+              notes sit in the section's top and bottom padding instead. */}
+          <p className="absolute left-6 top-8 -translate-y-1/2 -rotate-[4deg] font-hand text-[20px] uppercase tracking-tight text-about-accent sm:left-10 lg:left-[7.41%] lg:top-[17.14%] lg:w-[10%] lg:-rotate-[13.65deg]">
             We look so professional
           </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -84,21 +83,20 @@ export default function About() {
             alt=""
             aria-hidden="true"
             style={{ left: "13.57%", top: "24.62%", width: "5.24%" }}
-            className="absolute"
+            className="absolute hidden lg:block"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/about/vector-profiles.svg"
             alt=""
             aria-hidden="true"
-            style={{ left: "77.58%", top: "78.93%", width: "17%" }}
-            className="absolute"
+            className="absolute bottom-1 right-6 w-[42%] max-w-[170px] sm:right-10 lg:bottom-auto lg:left-[77.58%] lg:right-auto lg:top-[78.93%] lg:w-[17%] lg:max-w-none"
           />
         </div>
       </section>
 
       {/* Why us */}
-      <section className="relative px-6 py-16 sm:px-10 lg:px-28 lg:py-24">
+      <section className="relative px-6 pb-40 pt-16 sm:px-10 lg:px-28 lg:py-24">
         <div className="mx-auto grid max-w-[1288px] grid-cols-1 gap-x-6 lg:grid-cols-12">
           <div className="flex flex-col lg:col-span-6">
             <h2 className="font-tight text-[40px] leading-[1.1] tracking-[-1px] mb-10 lg:mb-20 lg:text-[64px]">
@@ -121,10 +119,9 @@ export default function About() {
 
         {/* Doodle overlay */}
         <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
-          <p
-            style={{ left: "57.74%", top: "31.31%", width: "15%" }}
-            className="absolute -translate-y-1/2 -rotate-[6.36deg] font-hand text-[21px] uppercase tracking-tight text-about-accent"
-          >
+          {/* Below lg the text runs the full width, so the note and its
+              "Yes!" drop into extra bottom padding under the copy. */}
+          <p className="absolute bottom-8 left-6 w-[62%] max-w-[260px] -rotate-[6.36deg] font-hand text-[21px] uppercase tracking-tight text-about-accent sm:left-10 lg:bottom-auto lg:left-[57.74%] lg:top-[31.31%] lg:w-[15%] lg:max-w-none lg:-translate-y-1/2">
             We can talk a lot more, but we prefer it to be in person
           </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -132,8 +129,7 @@ export default function About() {
             src="/about/doodle-yes.svg"
             alt=""
             aria-hidden="true"
-            style={{ left: "72.88%", top: "59.32%", width: "9.94%" }}
-            className="absolute"
+            className="absolute bottom-5 right-8 w-[22%] max-w-[100px] sm:right-12 lg:bottom-auto lg:left-[72.88%] lg:right-auto lg:top-[59.32%] lg:w-[9.94%] lg:max-w-none"
           />
         </div>
       </section>
@@ -153,10 +149,7 @@ export default function About() {
       <section className="relative px-6 pb-16 pt-32 sm:px-10 lg:px-0 lg:pb-24 lg:pt-32">
         {/* Doodle overlay */}
         <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
-          <p
-            style={{ left: "10.19%", top: "9.6%", width: "13%" }}
-            className="absolute -translate-y-1/2 -rotate-[9.45deg] font-hand text-[18px] uppercase tracking-tight text-about-accent"
-          >
+          <p className="absolute left-6 top-14 w-[46%] max-w-[190px] -translate-y-1/2 -rotate-[9.45deg] font-hand text-[18px] uppercase tracking-tight text-about-accent sm:left-10 lg:left-[10.19%] lg:top-[9.6%] lg:w-[13%] lg:max-w-none">
             Some of our work should go here
           </p>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -164,8 +157,7 @@ export default function About() {
             src="/about/union-work.svg"
             alt=""
             aria-hidden="true"
-            style={{ left: "26.32%", top: "9.61%", width: "13%" }}
-            className="absolute"
+            className="absolute left-[56%] top-10 w-[24%] max-w-[110px] lg:left-[26.32%] lg:top-[9.61%] lg:w-[13%] lg:max-w-none"
           />
         </div>
 
@@ -175,14 +167,14 @@ export default function About() {
               <Link
                 key={client.name}
                 href={client.href}
-                className="block border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
+                className="block border-b border-about-fg/10 py-10 text-center font-tight text-[28px] capitalize sm:text-[36px] leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
               >
                 {client.name}
               </Link>
             ) : (
               <p
                 key={client.name}
-                className="border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] lg:py-12 lg:text-[56px]"
+                className="border-b border-about-fg/10 py-10 text-center font-tight text-[28px] capitalize sm:text-[36px] leading-[1.1] lg:py-12 lg:text-[56px]"
               >
                 {client.name}
               </p>
@@ -200,14 +192,14 @@ export default function About() {
 
           <a
             href="mailto:hello@studiokasis.com"
-            className="mt-10 inline-flex items-center justify-center rounded-full border border-black px-8 py-3 text-[20px] text-black transition-opacity hover:opacity-70 lg:text-[26px]"
+            className="mt-10 inline-flex items-center justify-center rounded-full border border-black px-6 py-2 text-[16px] text-black transition-opacity hover:opacity-70 sm:px-8 sm:py-3 sm:text-[20px] lg:text-[26px]"
           >
             Book a call
           </a>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 text-[20px] font-light lg:mt-32">
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 text-[14px] font-light sm:text-[20px] lg:mt-32">
             <p>Studio Kasis 2026</p>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 sm:gap-8">
               <a
                 href="https://www.instagram.com/studiokasis?igsi=ZzNtcGZ1cTNrbGlu"
                 target="_blank"
@@ -218,13 +210,14 @@ export default function About() {
               </a>
               <span aria-hidden="true">|</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/about/vector-footer-arrow.svg" alt="" aria-hidden="true" className="h-4 w-auto" />
+              <img src="/about/vector-footer-arrow.svg" alt="" aria-hidden="true" className="h-3 w-auto sm:h-4" />
             </div>
           </div>
         </div>
 
-        {/* Doodle overlay */}
-        <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+        {/* Doodle overlay — hidden on phones, where there's no room beside
+            the heading */}
+        <div className="pointer-events-none absolute inset-0 z-20 hidden overflow-hidden md:block">
           <p
             style={{ left: "75.13%", top: "29.35%", width: "16%" }}
             className="absolute -translate-y-1/2 font-hand text-[18px] uppercase tracking-tight text-about-accent"

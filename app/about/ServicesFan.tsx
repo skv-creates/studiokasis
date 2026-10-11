@@ -31,7 +31,9 @@ export default function ServicesFan() {
       const rowCenter = row.offsetWidth / 2;
       offsets.current = cardRefs.current.map((card) => {
         if (!card) return 0;
-        return card.offsetLeft + card.offsetWidth / 2 - rowCenter;
+        // offsetLeft is relative to the section, so subtract the row's own
+        // offset (the section's side padding) to measure from the row.
+        return card.offsetLeft - row.offsetLeft + card.offsetWidth / 2 - rowCenter;
       });
     };
 
@@ -110,10 +112,7 @@ export default function ServicesFan() {
 
       {/* Doodle overlay — placed loosely near the cards, not aligned to them */}
       <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
-        <p
-          style={{ left: "4%", top: "62%", width: "14%" }}
-          className="absolute rotate-[3.5deg] font-hand text-[18px] uppercase tracking-tight text-about-accent"
-        >
+        <p className="absolute left-6 top-5 max-w-[220px] rotate-[3.5deg] font-hand text-[18px] uppercase tracking-tight text-about-accent sm:left-10 sm:top-8 lg:left-[4%] lg:top-[62%] lg:w-[14%] lg:max-w-none">
           A little section of what we offer?
         </p>
       </div>

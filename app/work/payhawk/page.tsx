@@ -12,7 +12,7 @@ export const metadata: Metadata = {
  * First case study page. Styling follows the v2 system introduced on /about:
  * about-bg ground, Inter Tight headings, the pink block for the closing CTA.
  *
- * Layout rule: prose sits in columns 4-10, figures break wider (full 12, or 8
+ * Layout rule: prose sits in columns 4-9, figures break wider (full 12, or 8
  * centred for the portrait crops) so the work reads as the argument and the
  * text as the caption around it.
  *
@@ -20,12 +20,13 @@ export const metadata: Metadata = {
  * add one that isn't.
  */
 
-/** Prose column — everything reads inside the same 7-column measure. */
+/** Prose column — same 6-column measure and fluid body size as the other
+ * case studies' SectionText. */
 function Prose({ children }: { children: React.ReactNode }) {
   return (
     <section className="px-6 sm:px-10 lg:px-28">
-      <div className="mx-auto grid max-w-[1288px] grid-cols-1 lg:grid-cols-12">
-        <div className="flex flex-col gap-6 py-8 text-[18px] leading-[1.6] lg:col-span-7 lg:col-start-4 lg:py-10 lg:text-[20px]">
+      <div className="mx-auto grid max-w-[1288px] grid-cols-1 lg:grid-cols-12 lg:gap-x-6">
+        <div className="flex flex-col gap-6 py-8 text-[clamp(15px,14px_+_0.27vw,22px)] leading-normal lg:col-span-6 lg:col-start-4 lg:py-10">
           {children}
         </div>
       </div>
@@ -53,7 +54,7 @@ function Figure({
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={src} alt={alt} className="w-full" />
-          <figcaption className="mt-3 font-tight text-[14px] uppercase tracking-[0.05em] opacity-50">
+          <figcaption className="mt-2 text-[11px] uppercase leading-normal text-about-fg/57 sm:text-[13px] lg:mt-3 lg:text-[15px]">
             {caption}
           </figcaption>
         </figure>
@@ -79,13 +80,13 @@ export default function Payhawk() {
       <section className="px-6 pb-8 pt-16 sm:px-10 lg:px-28 lg:pb-12 lg:pt-24">
         <div className="mx-auto grid max-w-[1288px] grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <p className="font-tight text-[16px] uppercase tracking-[0.05em] opacity-60">
+            <p className="mb-4 text-[11px] uppercase leading-normal text-about-fg/57 sm:text-[13px] lg:mb-6 lg:text-[15px]">
               Payhawk
             </p>
-            <h1 className="mt-4 font-tight text-[40px] leading-[1.1] tracking-[-1px] lg:text-[64px]">
+            <h1 className="max-w-[620px] font-tight text-[32px] leading-[1.15] lg:text-[52px]">
               The brand they raised on
             </h1>
-            <p className="mt-8 max-w-[640px] text-[18px] leading-[1.5] opacity-70 lg:text-[20px]">
+            <p className="mt-6 max-w-[524px] text-[16px] leading-[1.4] lg:mt-8">
               Brand identity, website and design system, built between the seed
               and the Series A. Sofia, 2020.
             </p>
@@ -101,7 +102,7 @@ export default function Payhawk() {
 
       <Prose>
         <p>
-          <strong className="font-semibold">
+          <strong className="font-bold">
             In January 2020, Payhawk had a working product, real customers, and
             an ambition they were completely clear about.
           </strong>{" "}
@@ -129,12 +130,12 @@ export default function Payhawk() {
       />
 
       <Prose>
-        <h2 className="font-tight text-[28px] leading-[1.2] tracking-[-0.5px] lg:text-[36px]">
+        <h2 className="mb-2 font-tight text-[28px] leading-[1.2] lg:mb-4 lg:text-[40px]">
           What we decided
         </h2>
         <p>
           Not &ldquo;look better.&rdquo;{" "}
-          <strong className="font-semibold">
+          <strong className="font-bold">
             Look like the company you intend to be in three years — to people
             meeting you for the first time.
           </strong>
@@ -142,7 +143,7 @@ export default function Payhawk() {
         <p>
           The positioning that came out of it, and that still governs the work:
         </p>
-        <blockquote className="border-l-2 border-about-fg/20 pl-6">
+        <blockquote className="border-l border-about-fg/40 pl-6">
           <p className="mb-4">
             Premium, but not exclusive. This is a serious product for finance
             professionals, but it isn&apos;t about status.
@@ -165,7 +166,7 @@ export default function Payhawk() {
       />
 
       <Prose>
-        <h2 className="font-tight text-[28px] leading-[1.2] tracking-[-0.5px] lg:text-[36px]">
+        <h2 className="mb-2 font-tight text-[28px] leading-[1.2] lg:mb-4 lg:text-[40px]">
           What we built
         </h2>
         <ul className="flex flex-col gap-3">
@@ -203,7 +204,7 @@ export default function Payhawk() {
               alt="A hardback book on a grey surface, The Ultimate Fintech Glossary set large across the cover, with the Payhawk wordmark on the spine and a green block at the corner."
               className="w-full"
             />
-            <figcaption className="mt-3 font-tight text-[14px] uppercase tracking-[0.05em] opacity-50">
+            <figcaption className="mt-2 text-[11px] uppercase leading-normal text-about-fg/57 sm:text-[13px] lg:mt-3 lg:text-[15px]">
               Content marketing, in the same system
             </figcaption>
           </figure>
@@ -214,7 +215,7 @@ export default function Payhawk() {
               alt="An event lanyard badge reading Webinar Series, talking to leaders in the Fintech world, with a green diagonal band and the tag Disrupt the Status Quo."
               className="w-full"
             />
-            <figcaption className="mt-3 font-tight text-[14px] uppercase tracking-[0.05em] opacity-50">
+            <figcaption className="mt-2 text-[11px] uppercase leading-normal text-about-fg/57 sm:text-[13px] lg:mt-3 lg:text-[15px]">
               Event and campaign assets
             </figcaption>
           </figure>
@@ -228,7 +229,7 @@ export default function Payhawk() {
       />
 
       <Prose>
-        <h2 className="font-tight text-[28px] leading-[1.2] tracking-[-0.5px] lg:text-[36px]">
+        <h2 className="mb-2 font-tight text-[28px] leading-[1.2] lg:mb-4 lg:text-[40px]">
           How it worked
         </h2>
         <p>
@@ -249,20 +250,20 @@ export default function Payhawk() {
       />
 
       <Prose>
-        <h2 className="font-tight text-[28px] leading-[1.2] tracking-[-0.5px] lg:text-[36px]">
+        <h2 className="mb-2 font-tight text-[28px] leading-[1.2] lg:mb-4 lg:text-[40px]">
           What happened
         </h2>
         <p>The identity went live in spring 2020 and ran until the Series A.</p>
         <p>
           In that window Payhawk raised a{" "}
-          <strong className="font-semibold">
+          <strong className="font-bold">
             $3.3M seed led by Bek Ventures
           </strong>{" "}
           (March 2020) and a{" "}
-          <strong className="font-semibold">
+          <strong className="font-bold">
             $20M Series A led by QED Investors and Hedosophia
           </strong>{" "}
-          (April 2021) — <strong className="font-semibold">$23.3M</strong>. The
+          (April 2021) — <strong className="font-bold">$23.3M</strong>. The
           company passed a $1B valuation in March 2022 and rebranded after the
           Series A, as companies at that scale do.
         </p>

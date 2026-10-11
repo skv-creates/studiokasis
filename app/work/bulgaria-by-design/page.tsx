@@ -234,7 +234,7 @@ export default function BulgariaByDesign() {
       {/* Campaign poster gallery */}
       <section className="px-6 py-10 sm:px-10 lg:px-28 lg:py-16">
         <div className="mx-auto grid max-w-[1288px] grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-x-6 lg:gap-y-24">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:gap-8 lg:col-start-1 lg:col-span-9 lg:row-start-1 lg:self-start">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-8 lg:col-start-1 lg:col-span-9 lg:row-start-1 lg:self-start">
             <div className="relative aspect-[924/977] w-full max-w-[640px] shrink-0 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -326,7 +326,7 @@ export default function BulgariaByDesign() {
               className="h-full w-full object-contain"
             />
           </div>
-          <p className="max-w-[400px] text-[15px] leading-normal text-about-fg/57 lg:col-start-9 lg:col-span-4 lg:row-start-1 lg:self-start">
+          <p className="-mt-4 max-w-[400px] text-[11px] leading-normal text-about-fg/57 sm:text-[13px] lg:mt-0 lg:text-[15px] lg:col-start-9 lg:col-span-4 lg:row-start-1 lg:self-start">
             MOCKUP — OFFICE DOOR SIGNAGE
           </p>
           <div className="lg:col-start-6 lg:col-span-7 lg:row-start-2 lg:self-start lg:justify-self-end">

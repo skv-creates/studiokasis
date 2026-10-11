@@ -182,7 +182,10 @@ export default function Home() {
         <div className="absolute inset-y-0 right-0 hidden w-[49.2%] bg-about-pink lg:block" />
         <div className="relative mx-auto grid w-full max-w-[1512px] grid-cols-1 items-center gap-12 px-6 sm:px-10 lg:grid-cols-12 lg:gap-x-16 lg:px-28">
           <div className="lg:col-span-6">
-            <h1 className="font-tight text-[40px] leading-[1.2] lg:text-[64px]">
+            {/* Each sentence stays on its own line at every width: the size
+                tracks the column (the longer line is ~9.1x the font size
+                wide), capped at the design's 40px / 64px. */}
+            <h1 className="whitespace-nowrap font-tight text-[clamp(24px,calc((100vw_-_48px)_/_9.3),40px)] leading-[1.2] lg:text-[clamp(36px,calc((50vw_-_144px)_/_9.3),64px)]">
               Your ambition is bold.
               <br />
               Your brand isn&apos;t.
@@ -217,7 +220,7 @@ export default function Home() {
           <Link
             key={project.name}
             href={project.href}
-            className="block border-b border-about-fg/10 py-10 text-center font-tight text-[36px] capitalize leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
+            className="block border-b border-about-fg/10 px-6 py-10 text-center font-tight text-[28px] capitalize sm:text-[36px] leading-[1.1] transition-opacity hover:opacity-70 lg:py-12 lg:text-[56px]"
           >
             {project.name}
           </Link>
@@ -294,7 +297,7 @@ export default function Home() {
 
       {/* Services (pricing cards) */}
       <section className="px-6 py-20 sm:px-10 lg:px-28 lg:py-32">
-        <div className="group/row mx-auto grid max-w-[1288px] grid-cols-1 items-start gap-6 sm:grid-cols-3">
+        <div className="group/row mx-auto grid max-w-[1288px] grid-cols-1 items-start gap-6 lg:grid-cols-3">
           <ServiceCard
             title="Positioning"
             price="€9,000 | 4 weeks"
@@ -443,14 +446,14 @@ export default function Home() {
 
           <a
             href="mailto:hello@studiokasis.com"
-            className="mt-10 inline-flex items-center justify-center rounded-full border border-black px-8 py-3 text-[20px] text-black transition-opacity hover:opacity-70 lg:text-[26px]"
+            className="mt-10 inline-flex items-center justify-center rounded-full border border-black px-6 py-2 text-[16px] text-black transition-opacity hover:opacity-70 sm:px-8 sm:py-3 sm:text-[20px] lg:text-[26px]"
           >
             Book a call
           </a>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 text-[20px] font-light lg:mt-32">
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 text-[14px] font-light sm:text-[20px] lg:mt-32">
             <p>Studio Kasis 2026</p>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4 sm:gap-8">
               <a
                 href="https://www.instagram.com/studiokasis?igsi=ZzNtcGZ1cTNrbGlu"
                 target="_blank"
@@ -461,13 +464,14 @@ export default function Home() {
               </a>
               <span aria-hidden="true">|</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/about/vector-footer-arrow.svg" alt="" aria-hidden="true" className="h-4 w-auto" />
+              <img src="/about/vector-footer-arrow.svg" alt="" aria-hidden="true" className="h-3 w-auto sm:h-4" />
             </div>
           </div>
         </div>
 
-        {/* Doodle overlay */}
-        <div className="pointer-events-none absolute inset-0 z-20 overflow-hidden">
+        {/* Doodle overlay — hidden on phones, where there's no room beside
+            the heading */}
+        <div className="pointer-events-none absolute inset-0 z-20 hidden overflow-hidden md:block">
           <p
             style={{ left: "75.13%", top: "29.35%", width: "16%" }}
             className="absolute -translate-y-1/2 font-hand text-[18px] uppercase tracking-tight text-about-accent"

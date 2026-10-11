@@ -113,7 +113,7 @@ export default function BulgarianDesignCouncil() {
           </div>
         </div>
         <Eyebrow className="mx-auto mt-2 max-w-[1288px] lg:mt-3">
-          THE LOGO - NEW SYMBOL AND WORDMARK
+          THE LOGO — NEW SYMBOL AND WORDMARK
         </Eyebrow>
       </section>
 
@@ -158,7 +158,7 @@ export default function BulgarianDesignCouncil() {
             ))}
           </div>
           <Eyebrow className="mt-2 max-w-[595px] lg:mt-3">
-            THE PATTERN SYSTEM - BUILT TO FLEX ACROSS CONTENT
+            THE PATTERN SYSTEM — BUILT TO FLEX ACROSS CONTENT
           </Eyebrow>
         </div>
       </section>
@@ -183,14 +183,14 @@ export default function BulgarianDesignCouncil() {
       <ImageCaption
         src={`${ASSET}/team-photography.jpg`}
         alt="Bulgarian Design Council team photography"
-        caption="TEAM PHOTOGRAPHY - ART DIRECTED AND SHOT FOR THE BRAND"
+        caption="TEAM PHOTOGRAPHY — ART DIRECTED AND SHOT FOR THE BRAND"
         aspect="aspect-[16/10]"
       />
 
       <ImageCaption
         src={`${ASSET}/campaign-design-mockup.jpg`}
         alt="BDC campaign design mockup"
-        caption="BDC CAMPAIGN DESIGN - MOCKUP"
+        caption="BDC CAMPAIGN DESIGN — MOCKUP"
         aspect="aspect-[16/10]"
       />
 
@@ -224,10 +224,10 @@ export default function BulgarianDesignCouncil() {
       {/* Print material gallery */}
       <section className="px-6 py-10 sm:px-10 lg:px-28 lg:py-16">
         <div className="mx-auto grid max-w-[1288px] grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-x-6 lg:gap-y-24">
-          <Eyebrow className="max-w-[321px] whitespace-pre-line lg:col-start-10 lg:col-span-3 lg:row-start-1 lg:self-start">
-            {"PRINT MATERIAL - ONE OF THREE DESIGNS FOR THE EUROPEAN DESIGN FESTIVAL 2026 GIFT BAGS"}
+          <Eyebrow className="order-2 -mt-4 max-w-[321px] whitespace-pre-line lg:order-none lg:mt-0 lg:col-start-10 lg:col-span-3 lg:row-start-1 lg:self-start">
+            {"PRINT MATERIAL — ONE OF THREE DESIGNS FOR THE EUROPEAN DESIGN FESTIVAL 2026 GIFT BAGS"}
           </Eyebrow>
-          <div className="relative aspect-[966/597] w-full overflow-hidden lg:col-start-1 lg:col-span-9 lg:row-start-1 lg:self-start">
+          <div className="relative order-1 aspect-[966/597] w-full overflow-hidden lg:order-none lg:col-start-1 lg:col-span-9 lg:row-start-1 lg:self-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${ASSET}/print-material-flatlay.jpg`}
@@ -235,7 +235,7 @@ export default function BulgarianDesignCouncil() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="lg:col-start-7 lg:col-span-6 lg:row-start-2 lg:self-start">
+          <div className="order-3 lg:order-none lg:col-start-7 lg:col-span-6 lg:row-start-2 lg:self-start">
             <div className="relative aspect-[612/771] w-full overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -281,7 +281,7 @@ export default function BulgarianDesignCouncil() {
             </div>
           </div>
           <Eyebrow className="mt-2 max-w-[718px] lg:mt-3">
-            {"COMPLETE WEB DESIGN - SHOWCASING THE COUNCIL'S MISSION, TEAM AND GOALS"}
+            {"COMPLETE WEB DESIGN — SHOWCASING THE COUNCIL'S MISSION, TEAM AND GOALS"}
           </Eyebrow>
         </div>
       </section>
@@ -305,7 +305,7 @@ export default function BulgarianDesignCouncil() {
       <ImageCaption
         src={`${ASSET}/brand-photography-location.jpg`}
         alt="Bulgarian Design Council brand photography shot on location"
-        caption="BRAND PHOTOGRAPHY - SHOT ON LOCATION"
+        caption="BRAND PHOTOGRAPHY — SHOT ON LOCATION"
         aspect="aspect-[16/10]"
       />
 
@@ -320,7 +320,7 @@ export default function BulgarianDesignCouncil() {
               className="h-full w-full object-contain object-top"
             />
           </div>
-          <p className="max-w-[400px] text-[15px] leading-normal text-about-fg/57 lg:col-start-9 lg:col-span-4 lg:row-start-1 lg:self-start">
+          <p className="-mt-4 max-w-[400px] text-[11px] leading-normal text-about-fg/57 sm:text-[13px] lg:mt-0 lg:text-[15px] lg:col-start-9 lg:col-span-4 lg:row-start-1 lg:self-start">
             SOCIAL TEMPLATES FROM THE BRAND IDENTITY — SCREEN MOCKUP
           </p>
           <div className="lg:col-start-6 lg:col-span-7 lg:row-start-2 lg:self-start lg:justify-self-end">
@@ -333,7 +333,7 @@ export default function BulgarianDesignCouncil() {
               />
             </div>
             <Eyebrow className="mt-2 lg:mt-3">
-              TEAM PORTRAITS - ART DIRECTED AND SHOT FOR THE BRAND
+              TEAM PORTRAITS — ART DIRECTED AND SHOT FOR THE BRAND
             </Eyebrow>
           </div>
         </div>
